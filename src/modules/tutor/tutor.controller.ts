@@ -15,10 +15,11 @@ import { asyncHandler } from "../../middlewares/asyncHandler";
  */
 import { sendError, sendSuccess } from "../../utils/response";
 
-const getAllTutors = asyncHandler(async (req: Request, res: Response) => {
-  const result = await TutorService.getAllTutors(req.query);
-  sendSuccess(res, result, "Tutors fetched successfully");
-});
+// const getAllTutors = asyncHandler(async (req: Request, res: Response) => {
+//   const result = await TutorService.getAllTutors(req.query);
+//   sendSuccess(res, result, "Tutors fetched successfully");
+// });
+
 
 const getTutorById = asyncHandler(async (req: Request, res: Response) => {
   const tutor = await TutorService.getTutorById(req.params.id as string);
