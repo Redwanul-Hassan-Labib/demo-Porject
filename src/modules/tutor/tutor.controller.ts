@@ -65,7 +65,7 @@ const getTutorStats = asyncHandler(async (req: Request, res: Response) => {
 });
 
 export const TutorController = {
-  getAllTutors,
+  // getAllTutors,
   getTutorById,
   getMyProfile,
   updateMyProfile,
