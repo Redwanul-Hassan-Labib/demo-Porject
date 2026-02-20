@@ -75,16 +75,16 @@ const getUserBookings = async (
   const include: Prisma.BookingInclude =
     role === "admin"
       ? {
-          student: { select: { name: true, image: true, email: true } },
+          student: { select: { name: true,  email: true } },
           tutorProfile: {
             include: {
-              user: { select: { name: true, image: true, email: true } },
+              user: { select: { name: true,  email: true } },
             },
           },
         }
       : role === "tutor"
         ? {
-            student: { select: { name: true, image: true, email: true } },
+            student: { select: { name: true,  email: true } },
             tutorProfile: {
               include: {
                 category: { select: { name: true } },
@@ -94,7 +94,7 @@ const getUserBookings = async (
         : {
             tutorProfile: {
               include: {
-                user: { select: { name: true, image: true } },
+                user: { select: { name: true } },
                 category: { select: { name: true } },
               },
             },
@@ -132,10 +132,10 @@ const getBookingById = async (
   const booking = await prisma.booking.findUnique({
     where: { id },
     include: {
-      student: { select: { name: true, email: true, image: true } },
+      student: { select: { name: true, email: true } },
       tutorProfile: {
         include: {
-          user: { select: { name: true, image: true, email: true } },
+          user: { select: { name: true, email: true } },
         },
       },
     },

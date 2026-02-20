@@ -15,10 +15,10 @@ export interface BookingQueryParams extends BaseQueryParams {
 
 export type BookingDetails = Prisma.BookingGetPayload<{
   include: {
-    student: { select: { name: true; email: true; image: true } };
+    student: { select: { name: true; email: true; } };
     tutorProfile: {
       include: {
-        user: { select: { name: true; image: true; email: true } };
+        user: { select: { name: true; email: true } };
       };
     };
   };
